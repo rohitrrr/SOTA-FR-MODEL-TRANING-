@@ -563,13 +563,9 @@ class TrainScaleFR:
             logging.info("Validating...")
 
             for val_name in self.validation_names:
-                try:
-                    # Load on-demand (saves ~3GB RAM vs preloading)
-                    dataset, issame = get_val_pair(
-                        self.config.val_source, val_name)
-                except FileNotFoundError:
-                    logging.warning(f"Validation set '{val_name}' not found, skipping.")
-                    continue
+                # Load on-demand (saves ~3GB RAM vs preloading)
+                dataset, issame = get_val_pair(
+                    self.config.val_source, val_name)
 
                 if (self.sf.use_projected_inference and
                         self.fisher.initialized):

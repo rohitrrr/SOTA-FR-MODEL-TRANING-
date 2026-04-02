@@ -134,13 +134,8 @@ class Train:
         for val_name in config.val_list:
             if local_rank == 0:
                 print(f"Loading {val_name}...")
-            try:
-                dataset, issame = get_val_pair(self.config.val_source, val_name)
-                self.validation_list.append([dataset, issame, val_name])
-            except FileNotFoundError:
-                if local_rank == 0:
-                    logging.warning(f"Validation set '{val_name}' not found in '{self.config.val_source}', skipping.")
-                continue
+            dataset, issame = get_val_pair(self.config.val_source, val_name)
+            self.validation_list.append([dataset, issame, val_name])
 
         self.train_logger = TrainLogger(
             total_batch,
