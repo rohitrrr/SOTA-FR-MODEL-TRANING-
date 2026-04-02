@@ -40,9 +40,10 @@ config.augment        = False
 config.rand_erase     = False
 config.fixed_size     = None
 
-# ─── Training ─────────────────────────────────────────────────────────────────
-config.batch_size     = 256
-config.lr             = 0.1
+# ─── Training (Optimized for A100 GPU) ────────────────────────────────────────
+config.batch_size     = 512       # Greatly increased for A100
+config.lr             = 0.2       # Scaled up because of batch size increase
+
 config.momentum       = 0.9
 config.weight_decay   = 5e-4
 config.epochs         = 20
@@ -56,7 +57,8 @@ config.warmup_epoch   = 1
 config.margin         = 0.4
 
 # ─── Validation ─────────────────────────────────────────────────────────────
-config.val_list       = ["lfw", "cfp_fp", "agedb_30"]
+# Set this back to ["lfw", "cfp_fp", "agedb_30"] once you download test_set_package_5
+config.val_list       = []   
 config.val_source     = "./test_set_package_5"
 config.add_flip       = False   # AdaFace: flip during feature extraction OFF
 config.add_norm       = True    # AdaFace: L2-normalize embeddings ON
