@@ -57,8 +57,7 @@ config.warmup_epoch   = 1
 config.margin         = 0.4
 
 # ─── Validation ─────────────────────────────────────────────────────────────
-# Set this back to ["lfw", "cfp_fp", "agedb_30"] once you download test_set_package_5
-config.val_list       = []   
+config.val_list       = ["lfw", "cfp_fp", "agedb_30"]
 config.val_source     = "./test_set_package_5"
 config.add_flip       = False   # AdaFace: flip during feature extraction OFF
 config.add_norm       = True    # AdaFace: L2-normalize embeddings ON
