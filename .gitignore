@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# datasets and zips
+dataset/
+*.zip
+data/
+
+# test sets
+test_set_package/
+test_set_package_5/
+
+# workspaces and logs
+workspace/
