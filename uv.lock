@@ -2055,7 +2055,7 @@ wheels = [
 [[package]]
 name = "sota-fr-train-and-test"
 version = "0.1.0"
-source = { editable = "." }
+source = { virtual = "." }
 dependencies = [
     { name = "easydict" },
     { name = "imageio" },
