@@ -47,26 +47,17 @@ If you find this repo is helpful, please cite our paper.
   <!--te-->
 
 ## Environment
-We highly recommend using [**uv**](https://github.com/astral-sh/uv) (Astral's lightning-fast Python package manager) to install dependencies and run the project reproducibly.
-
-1. **Install uv** (if you haven't already):
-   ```bash
-   curl -LsSf https://astral.sh/uv/install.sh | sh
-   ```
-2. **Clone and setup**:
-   ```bash
-   git clone https://github.com/HaiyuWu/SOTA-FR-train-and-test.git
-   cd SOTA-FR-train-and-test
-   
-   # This creates a virtual environment and installs all dependencies instantly
-   uv sync
-   ```
-3. **Run your scripts** (uv automatically uses the virtual environment):
-   ```bash
-   uv run train.py --config_file ./configs/arcface_r100.py
-   # Or using torchrun with uv:
-   uv run torchrun --nproc_per_node=4 train.py --config_file ./configs/arcface_r100.py
-   ```
+I suggest you to use Anaconda to better control the environments
+```
+conda create -n fr_training python==3.10 -y
+conda activate fr_training
+```
+Then clone the package and use pip to install the dependencies
+```
+git clone https://github.com/HaiyuWu/SOTA-FR-train-and-test.git
+cd ./SOTA-FR-train-and-test
+pip install -r requirements.txt
+```
 
 ## Dataset preparation
 ### Hadrian, Eclipse, and ND-twins

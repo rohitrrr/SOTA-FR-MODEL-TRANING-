@@ -7,7 +7,7 @@ from time import time
 from torch import optim, distributed
 from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
-from data import LMDBDataLoader, get_val_pair, setup_seed
+from data import LMDBDataLoader,WebDataLoader, get_val_pair, setup_seed
 from lr_scheduler import PolyScheduler
 from model import iresnet, PartialFC_V2, get_vit
 import verification

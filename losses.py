@@ -180,7 +180,7 @@ class AdaFace(nn.Module):
         cosine = logits.clamp(-1+self.eps, 1-self.eps)
         target_logit = cosine[index, labels[index].view(-1)]
 
-        norms = torch.norm(kwargs['embeddings'], 2, 1, True)
+        norms = torch.norm(embeddings, 2, 1, True)
         safe_norms = torch.clip(norms, min=0.001, max=100)
         safe_norms = safe_norms[index].clone().detach()
 
